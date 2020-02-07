@@ -19,9 +19,10 @@ class BlogController extends Controller
 
     public function show($slug)
     {
-        $blog = Blog::where('slug', $slug)->take(1)->get();
-        dd($blog);
-
-        return view('blogs.show');
+        $blog = Blog::where('slug', $slug)->first();
+        // dd($blog);
+        return view('blogs.show', [
+            'blog' => $blog
+        ]);
     }
 }
