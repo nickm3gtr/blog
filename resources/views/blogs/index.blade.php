@@ -8,48 +8,21 @@
       <header class="major">
         <h2>Latest from the Blog</h2>
       </header>
-      <div class="row 150%">
-        <div class="6u 12u$(xsmall)">
-          <div class="image fit captioned">
-            <img src="images/pic02.jpg" alt="" />
-            <h3>Lorem ipsum dolor sit amet.</h3>
+
+      @foreach ($blogs as $blog)
+        @if($blog->id % 2 != 0)
+          <div class="row 150%">
+        @endif
+          <div class="6u 12u$(xsmall)">
+            <div class="image fit captioned">
+              <img src="images/pic02.jpg" alt="" />
+              <h3>{{ $blog->title }}</h3>
+            </div>
           </div>
-        </div>
-        <div class="6u$ 12u$(xsmall)">
-          <div class="image fit captioned">
-            <img src="images/pic03.jpg" alt="" />
-            <h3>Illum, maiores tempora cupid?</h3>
+        @if($blog->id % 2 == 0 || $loop->last)
           </div>
-        </div>
-      </div>
-      <div class="row 150%">
-        <div class="6u 12u$(xsmall)">
-          <div class="image fit captioned">
-            <img src="images/pic02.jpg" alt="" />
-            <h3>Lorem ipsum dolor sit amet.</h3>
-          </div>
-        </div>
-        <div class="6u$ 12u$(xsmall)">
-          <div class="image fit captioned">
-            <img src="images/pic03.jpg" alt="" />
-            <h3>Illum, maiores tempora cupid?</h3>
-          </div>
-        </div>
-      </div>
-      <div class="row 150%">
-        <div class="6u 12u$(xsmall)">
-          <div class="image fit captioned">
-            <img src="images/pic02.jpg" alt="" />
-            <h3>Lorem ipsum dolor sit amet.</h3>
-          </div>
-        </div>
-        <div class="6u$ 12u$(xsmall)">
-          <div class="image fit captioned">
-            <img src="images/pic03.jpg" alt="" />
-            <h3>Illum, maiores tempora cupid?</h3>
-          </div>
-        </div>
-      </div>
+        @endif
+      @endforeach
     </div>
   </section>
 

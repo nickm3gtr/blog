@@ -16,4 +16,12 @@ class BlogController extends Controller
             'blogs' => $blogs
         ]);
     }
+
+    public function show($slug)
+    {
+        $blog = Blog::where('slug', $slug)->take(1)->get();
+        dd($blog);
+
+        return view('blogs.show');
+    }
 }

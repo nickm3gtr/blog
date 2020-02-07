@@ -15,10 +15,11 @@
 
 		<!-- Header -->
     <header id="header" class="{{ Request::is('/') ? 'alt' : '' }}">
-				<h1><strong><a href="index.html">Travel</a></strong> Blog</h1>
+				<h1><strong><a href="/">Travel</a></strong> Blog</h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blogs">Blog</a></li>
 						<li><a href="/about">About</a></li>
 					</ul>
 				</nav>

@@ -22,7 +22,7 @@
 								<div class="6u 12u$(xsmall)">
 									<div class="image fit captioned">
 										<img src="images/pic02.jpg" alt="" />
-										<h3>{{ $blog->title }}</h3>
+										<h3><a href="/blogs/{{ $blog->slug }}">{{ $blog->title }}</a></h3>
 									</div>
 								</div>
 							@if($blog->id % 2 == 0 || $loop->last)
