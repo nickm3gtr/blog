@@ -19,8 +19,15 @@
 				<nav id="nav">
 					<ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/blogs">Blog</a></li>
-						<li><a href="/about">About</a></li>
+            <li><a href="/blogs">Blogs</a></li>
+						@guest
+							<li><a href="{{ route('login') }}">Login</a></li>
+							@if (Route::has('register'))
+							<li><a href="{{ route('register') }}">Register</a></li>
+							@endif
+						@else
+						<li><a href="{{ route('logout') }}">Logout</a></li>
+						@endguest
 					</ul>
 				</nav>
 			</header>

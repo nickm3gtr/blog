@@ -26,3 +26,7 @@ Route::get('/about', function () {
 
 Route::get('/blogs', 'BlogController@index');
 Route::get('/blogs/{slug}', 'BlogController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
